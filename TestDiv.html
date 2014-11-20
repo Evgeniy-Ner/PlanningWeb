@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <style type="text/css">
+        .ItemDiv {
+            height: 50px;
+            float: left;
+            /*margin: 1px;*/
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .timeDiv {
+            height: 10px;
+            width: 9px;
+            float: left;
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+
+        .div_hour_cell {
+            height: 140px;
+            width: 100px;
+            float: left;
+            border-left: 1px solid rgb(192,192,192);
+        }
+
+
+        .ItemDiv:hover {
+            background-color: gold;
+        }
+
+        #div1 {
+            background-color: lightgreen;
+            position: absolute;
+            height: 300px;
+        }
+
+        #div_time_line {
+            background-color: rgb(161, 15,15);
+            color: white;
+            height:25px;
+        }
+
+        #div_day_line {
+            background-color: rgb(203, 122,122);
+            color: black;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            height:30px;
+        }
+
+
+        #div2 {
+            background-color: rgb(161,  15,15);
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            left: 50px;
+            top: 350px;
+            float: left;
+        }
+
+        #div3 {
+            background-color: yellow;
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            left: 100px;
+            top: 350px;
+            float: left;
+        }
+
+    </style>
+
+
+
+    <script>
+
+        $(function () {
+
+        });
+
+        function OnClickButton() {
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" title="Нажми на меня" value="Нажми на меня" onclick="OnClickButton();">
+
+    <div id="div_time_line">
+        12
+    </div>
+    &nbsp;
+
+    <div class="div_hour_cell"></div>
+    <div class="div_hour_cell"></div>
+    <div class="div_hour_cell"></div>
+    <div class="div_hour_cell"></div>
+    <div class="div_hour_cell"></div>
+    <div class="div_hour_cell"></div>
+
+
+    <div id="div_day_line">
+        12
+    </div>
+
+
+        <div id="planning">
+
+
+        </div>
+
+        <div id="div1">
+            <div id="div2">
+                o
+            </div>
+
+            <div id="div3">
+                t
+            </div>
+        </div>
+</body>
+</html>

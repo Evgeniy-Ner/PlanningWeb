@@ -1,0 +1,62 @@
+﻿.ItemDiv {
+    height: 50px;
+    float: left;
+    /*margin: 1px;*/
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.timeDiv {
+    height: 10px;
+    width: 9px;
+    float: left;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.ItemDiv:hover {
+    background-color: gold;
+}
+
+.WorkShift {
+    display: inline-block;
+    width: 288x;
+    height: 100px;
+    background-color: rgb(203, 122,122);
+    border: 1px solid black;
+    /*float: left;*/
+}
+
+#output {
+    width: 800px;
+    height: 390px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border: 1px solid red;
+}
+
+/* Бордовая линия с засечками времени:*/
+
+#div_time_line {
+    background-color: rgb(161, 15,15);
+    color: white;
+    height: 25px;
+}
+
+
+/*серые вертикальные линии отмечающие каждый час, 12 в смену*/
+.div_hour_cell {
+    height: 10px;
+    width: 24px;
+    float: left;
+    border-left: 1px solid rgb(192,192,192);
+}
+
+#planning {
+    
+    left:-100px;
+    margin-left: -100px;
+
+}

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="Engine\engine.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles\style_default.css">
+
+    <script>
+
+        $(function () {
+            
+        });
+
+        function OnClickButton()
+        {
+            
+
+            $.getJSON("GetObject.aspx?object=Operations", function (data) {
+
+                //alert("Получен ответ :)");
+
+                var items = [];
+                var divs = [];
+
+                var color = 'green';
+
+                var green = 'green';
+                var blue = 'blue';
+
+                $.each(data, function (key, val) {
+
+                    var duration = (parseInt(val.TimeEnd) - parseInt(val.TimeStart))*3;
+
+                    items.push("<li id='" + key + "'>" + val.ID + " " + val.MachineName + " [" + val.TimeStart + " - " + val.TimeEnd + "] duration: " + duration + "</li>");
+
+                    
+
+                    $("#planning").append("<div class = 'ItemDiv'  style='width:" + duration + "px; background-color:" + color + ";'>test </div>");
+
+                    if (color == green)
+                        color = blue;
+                    else
+                        color = green;
+
+
+                });
+
+                $("<ul/>", {
+                    "class": "my-new-list",
+                    html: items.join("")
+                }).appendTo("body");
+
+
+                
+
+ 
+            });
+
+            //alert("Нажата кнопка2");
+        }
+
+    </script>
+</head>
+<body>
+    <div id="output">
+        <div id="div_time_line">
+        </div>
+        <div>
+            <span id="hourses_span">
+                   123
+            </span>
+
+
+            <div id="day_line">
+
+
+            </div>
+
+        </div>
+        <div id="planning">
+            test
+
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
