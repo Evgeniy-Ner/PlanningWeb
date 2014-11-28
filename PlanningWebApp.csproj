@@ -61,20 +61,20 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Engine\test.js" />
     <Content Include="Engine\engine.js" />
-    <Content Include="getObject.aspx" />
+    <Content Include="Engine\test1.js" />
+    <Content Include="Styles\test.css" />
+    <Content Include="Test1.html" />
+    <Content Include="Test.html" />
     <Content Include="index.html" />
     <Content Include="Styles\style_default.css" />
     <Content Include="TestDiv.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="getObject.aspx.cs">
-      <DependentUpon>getObject.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="getObject.aspx.designer.cs">
-      <DependentUpon>getObject.aspx</DependentUpon>
+    <Compile Include="getObject.ashx.cs">
+      <DependentUpon>getObject.ashx</DependentUpon>
     </Compile>
     <Compile Include="JSONProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +85,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="getObject.ashx" />
     <None Include="Properties\PublishProfiles\PlanningWebApp.pubxml" />
     <Content Include="StoredProcedures.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>

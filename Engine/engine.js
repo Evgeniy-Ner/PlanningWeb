@@ -2,9 +2,7 @@
 
 
 
-    $.getJSON("GetObject.aspx?object=CalendarDays", function (data) {
-
-        //alert("Получен ответ :)");
+    $.getJSON("GetObject.ashx?object=CalendarDays", function (data) {
 
         var items = [];
         var divs = [];
@@ -20,11 +18,10 @@
             for(var i =0; i< 12; i++)
             {
                 jQuery('<div/>', {
-                
+                    
                     class: "div_hour_cell",
                 }).appendTo('#hourses_span');
-            }
-            
+            }           
 
 
         });

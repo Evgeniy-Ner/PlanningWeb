@@ -22,7 +22,7 @@ namespace PlanningWebApp
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="gmprint_neu")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="gmprint_zmv")]
 	public partial class StoredProceduresDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace PlanningWebApp
     #endregion
 		
 		public StoredProceduresDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["gmprint_neuConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["gmprint_zmvConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -74,6 +74,13 @@ namespace PlanningWebApp
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<PLN_WebGetDaysResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.P_PLN_GetPlanOperations")]
+		public ISingleResult<P_PLN_GetPlanOperationsResult> P_PLN_GetPlanOperations([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idWorkshop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dDateBgn, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> dDateEnd)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idWorkshop, dDateBgn, dDateEnd);
+			return ((ISingleResult<P_PLN_GetPlanOperationsResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -232,6 +239,302 @@ namespace PlanningWebApp
 				if ((this._descr != value))
 				{
 					this._descr = value;
+				}
+			}
+		}
+	}
+	
+	public partial class P_PLN_GetPlanOperationsResult
+	{
+		
+		private long _ID;
+		
+		private int _TypeData;
+		
+		private string _Workshop;
+		
+		private string _OrderNumber;
+		
+		private string _TypeUrgency;
+		
+		private string _Machine;
+		
+		private string _Operation;
+		
+		private string _OperationDescription;
+		
+		private string _FormatSize;
+		
+		private System.Nullable<System.DateTime> _DateBgnPlan;
+		
+		private System.Nullable<System.DateTime> _DateEndPlan;
+		
+		private System.Nullable<double> _DurPlanInMi;
+		
+		private System.Nullable<double> _DurPlanInHh;
+		
+		private string _NameProduct;
+		
+		private System.Nullable<int> _Circulation;
+		
+		private System.Nullable<System.DateTime> _DateCalcComplete;
+		
+		public P_PLN_GetPlanOperationsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="BigInt NOT NULL")]
+		public long ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeData", DbType="Int NOT NULL")]
+		public int TypeData
+		{
+			get
+			{
+				return this._TypeData;
+			}
+			set
+			{
+				if ((this._TypeData != value))
+				{
+					this._TypeData = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Workshop", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string Workshop
+		{
+			get
+			{
+				return this._Workshop;
+			}
+			set
+			{
+				if ((this._Workshop != value))
+				{
+					this._Workshop = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderNumber", DbType="NVarChar(100)")]
+		public string OrderNumber
+		{
+			get
+			{
+				return this._OrderNumber;
+			}
+			set
+			{
+				if ((this._OrderNumber != value))
+				{
+					this._OrderNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeUrgency", DbType="VarChar(18)")]
+		public string TypeUrgency
+		{
+			get
+			{
+				return this._TypeUrgency;
+			}
+			set
+			{
+				if ((this._TypeUrgency != value))
+				{
+					this._TypeUrgency = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Machine", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Machine
+		{
+			get
+			{
+				return this._Machine;
+			}
+			set
+			{
+				if ((this._Machine != value))
+				{
+					this._Machine = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Operation", DbType="NVarChar(50)")]
+		public string Operation
+		{
+			get
+			{
+				return this._Operation;
+			}
+			set
+			{
+				if ((this._Operation != value))
+				{
+					this._Operation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OperationDescription", DbType="NVarChar(1000)")]
+		public string OperationDescription
+		{
+			get
+			{
+				return this._OperationDescription;
+			}
+			set
+			{
+				if ((this._OperationDescription != value))
+				{
+					this._OperationDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FormatSize", DbType="NVarChar(61)")]
+		public string FormatSize
+		{
+			get
+			{
+				return this._FormatSize;
+			}
+			set
+			{
+				if ((this._FormatSize != value))
+				{
+					this._FormatSize = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateBgnPlan", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateBgnPlan
+		{
+			get
+			{
+				return this._DateBgnPlan;
+			}
+			set
+			{
+				if ((this._DateBgnPlan != value))
+				{
+					this._DateBgnPlan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEndPlan", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateEndPlan
+		{
+			get
+			{
+				return this._DateEndPlan;
+			}
+			set
+			{
+				if ((this._DateEndPlan != value))
+				{
+					this._DateEndPlan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurPlanInMi", DbType="Float")]
+		public System.Nullable<double> DurPlanInMi
+		{
+			get
+			{
+				return this._DurPlanInMi;
+			}
+			set
+			{
+				if ((this._DurPlanInMi != value))
+				{
+					this._DurPlanInMi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DurPlanInHh", DbType="Float")]
+		public System.Nullable<double> DurPlanInHh
+		{
+			get
+			{
+				return this._DurPlanInHh;
+			}
+			set
+			{
+				if ((this._DurPlanInHh != value))
+				{
+					this._DurPlanInHh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NameProduct", DbType="NVarChar(100)")]
+		public string NameProduct
+		{
+			get
+			{
+				return this._NameProduct;
+			}
+			set
+			{
+				if ((this._NameProduct != value))
+				{
+					this._NameProduct = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Circulation", DbType="Int")]
+		public System.Nullable<int> Circulation
+		{
+			get
+			{
+				return this._Circulation;
+			}
+			set
+			{
+				if ((this._Circulation != value))
+				{
+					this._Circulation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateCalcComplete", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateCalcComplete
+		{
+			get
+			{
+				return this._DateCalcComplete;
+			}
+			set
+			{
+				if ((this._DateCalcComplete != value))
+				{
+					this._DateCalcComplete = value;
 				}
 			}
 		}

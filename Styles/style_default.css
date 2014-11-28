@@ -60,3 +60,18 @@
     margin-left: -100px;
 
 }
+
+.main_TimeOperations
+{
+    position: relative;
+
+    left:150px; 
+    top:50px;
+
+    width:700px;
+    height:500px;
+
+    border:1px solid black;
+
+    back
+}
