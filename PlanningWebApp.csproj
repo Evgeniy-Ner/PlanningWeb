@@ -61,10 +61,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1.png" />
+    <Content Include="Engine\jquery.timer.js" />
     <Content Include="Engine\test.js" />
     <Content Include="Engine\engine.js" />
     <Content Include="Engine\test1.js" />
+    <Content Include="Engine\test2.js" />
+    <Content Include="Styles\test2.css" />
     <Content Include="Styles\test.css" />
+    <Content Include="Test2.html" />
     <Content Include="Test1.html" />
     <Content Include="Test.html" />
     <Content Include="index.html" />
@@ -86,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="getObject.ashx" />
+    <Content Include="MyObject.json" />
     <None Include="Properties\PublishProfiles\PlanningWebApp.pubxml" />
     <Content Include="StoredProcedures.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
