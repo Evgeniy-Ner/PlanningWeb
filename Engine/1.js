@@ -13,7 +13,8 @@ ScaleTime.prototype.date = function () {
 
 
 
-
+var OneMilliseconds = 60;
+var OneCentiseconds = 10 * 60;
 var OneSecond = 1000 * 60;
 var OneMinute = OneSecond * 60;
 var OneHour = OneMinute * 60;
@@ -43,6 +44,9 @@ var CountHours;
 
 var MinutePixels;
 var CountMinutes;
+var CountSeconds;
+
+var CountCentisecond;
 
 
 
@@ -85,6 +89,10 @@ function Init() {
     CountMinutes = (endTime.time - startTime.time) / OneMinute;
 
     CountSeconds = (endTime.time - startTime.time) / OneSecond;
+
+    CountCentisecond = (endTime.time - startTime.time) / OneCentiseconds;
+
+    CountMillisecond = (endTime.time - startTime.time) / OneMilliseconds;
     
     Draw("day", "main", 2560, CountDays);
 
@@ -93,6 +101,10 @@ function Init() {
     Draw("minute", "hour", 60, CountMinutes);
 
     Draw("second", "minute", 60, CountSeconds);
+
+    Draw("centisecond", "second", 100, CountCentisecond);
+
+    Draw("millisecond", "centisecond", 10, CountMillisecond);
 
     TraceParams();
 
@@ -156,7 +168,7 @@ function Draw(what_insert, where_insert, fullCount, placed)
 
     var multipulir = Math.floor(10 / pixels + 1);
 
-    if (multipulir <= 12) {
+    if (multipulir <= 10) {
 
         $('#output').append("<p> multipulir: " + multipulir + "</p>");
         $('#output').append("<p> width: " + pixels * 1 * multipulir + "</p>");
@@ -171,13 +183,60 @@ function Draw(what_insert, where_insert, fullCount, placed)
 
                 class: what_insert,
 
-                style: "left:" + pixels * i * multipulir + "px; ",
+                style: "left:" + pixels * i * multipulir + "px; background-color: rgb(" + ((Math.random() * 256) + 1) + "," + ((Math.random() * 256) + 1) + "," + ((Math.random() * 256) + 1) + ")",
 
-                width: pixels * multipulir + "px"
+                width: pixels * multipulir + "px",
+
+                text: ((i) * multipulir),
+
+                id: (i) * multipulir + what_insert
 
             }).appendTo("." + where_insert);
 
             $("#output").append(i * multipulir + " ");
         }
+
+        $("." + what_insert).mouseover(function () {
+            
+            var color = "white";
+            switch($(this).attr("class"))
+            {
+                case "day":
+                    color = "lightblue";
+                    break;
+                case "hour":
+                    color = "yellow";
+                    break;
+
+                case "minute":
+                    color = "lightgreen";
+                    break;
+
+                case "second":
+                    color = "lightgray";
+                    break;
+
+                case "centisecond":
+                    color = "magenta";
+                    break;
+                case "millisecond":
+                    color = "chartreuse";
+                    break;
+            }
+
+            $(this).css("background-color", color);
+
+
+                
+            
+        });
+
+        $("." + what_insert).mouseleave(function () {
+
+            $(this).css("background-color", "");
+
+            $("#header").text($(this).attr("class"));
+            
+        });
     }
 }
