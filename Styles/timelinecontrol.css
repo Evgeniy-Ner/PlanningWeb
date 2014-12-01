@@ -1,0 +1,75 @@
+﻿.container {
+
+    width: 80%;
+    height: 600px;
+
+    border: 1px solid black;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.timeline{
+    position:absolute;
+
+    height: 150px;
+
+    background-color: lightblue;
+}
+
+.hour
+{
+    border-left: 1px solid black;
+
+    //border-right: 1px solid red;
+
+    height: 50px;
+    
+
+    position: absolute;
+
+    background-color: lightgreen;
+
+    overflow: hidden;
+}
+
+.test
+{
+    background-color:lightblue;
+
+    border: 1px solid black;
+
+    width: 50px;
+
+    height:300px;
+}
+
+.minute
+{
+    border-left: 1px solid black;
+
+    //border-right: 1px solid red;
+
+    height: 25px;
+    
+
+    position: absolute;
+
+    background-color: lightgreen;
+}
+
+.second
+{
+    border-left: 1px solid black;
+
+    
+
+    height: 15px;
+    
+
+    position: absolute;
+
+    background-color: lightgreen;
+}

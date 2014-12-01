@@ -1,0 +1,90 @@
+﻿body {
+}
+
+
+.main
+{
+    width: 600px;
+
+    height:300px;
+
+    left: 50px;
+    top: 50px;
+
+    position:relative;
+
+    overflow: hidden;
+
+    background-color: white;
+    
+}
+
+.day
+{
+    position: absolute;
+
+    border-left: 1px solid black;
+    --border-bottom: 1px solid black;
+
+
+    height: 100px;
+
+    overflow: hidden;
+
+    font-size:5pt;
+}
+
+.hour
+{
+    position: absolute;
+
+    border-left: 1px solid black;
+    
+    height: 50px;
+
+    overflow: hidden;
+
+    font-size:5pt;
+
+    margin-left: -1px;
+}
+
+.minute
+{
+    position: absolute;
+
+    border-left: 1px solid black;
+    
+    height: 35px;
+
+    overflow: hidden;
+
+    font-size:5pt;
+
+    margin-left: -1px;
+}
+
+.second
+{
+    position: absolute;
+
+    border-left: 1px solid red;
+    
+    height: 15px;
+
+    overflow: hidden;
+
+    font-size:5pt;
+
+    margin-left: -1px;
+}
+
+#output
+{
+    font-size:10pt;
+}
+
+#trace_scale
+{
+    font-size:9pt;
+}
