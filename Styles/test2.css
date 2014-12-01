@@ -90,3 +90,12 @@
 
     height: 27px;
 }
+
+.info:hover
+{
+    background-color:yellow;
+
+    z-index:100000;
+
+    position:absolute;
+}

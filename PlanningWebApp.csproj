@@ -61,20 +61,30 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1.html" />
     <Content Include="1.png" />
+    <Content Include="Engine\1.js" />
     <Content Include="Engine\jquery.timer.js" />
     <Content Include="Engine\test.js" />
     <Content Include="Engine\engine.js" />
     <Content Include="Engine\test1.js" />
     <Content Include="Engine\test2.js" />
+    <Content Include="Engine\timelinecontrol.js" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Styles\1.css" />
     <Content Include="Styles\test2.css" />
     <Content Include="Styles\test.css" />
+    <Content Include="Styles\timelinecontrol.css" />
     <Content Include="Test2.html" />
     <Content Include="Test1.html" />
     <Content Include="Test.html" />
     <Content Include="index.html" />
     <Content Include="Styles\style_default.css" />
     <Content Include="TestDiv.html" />
+    <Content Include="TimeLineControl.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +108,7 @@
       <LastGenOutput>StoredProcedures.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

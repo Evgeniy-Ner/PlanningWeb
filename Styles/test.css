@@ -119,3 +119,25 @@
 
     width: 1000px;
 }
+
+.info1
+{
+    position:absolute;
+      z-index:1000;
+
+      background-color: yellow;
+
+
+}
+
+.info
+{
+    z-index:1000;
+    position:relative;
+}
+
+.info:hover
+{
+    background-color: yellow;
+  
+}

@@ -1,13 +1,8 @@
 ﻿$(function () {
 
     $('body').css("background-color", "white");
-    $(".timeline_time").text(new Date().toLocaleTimeString());
 
-    var timer = $.timer(1000, function () {
-        
-        $(".timeline_time").text(new Date().toLocaleTimeString() );
-    });
-
+    InitClock();
 
 
     $("#datepicker").datetimepicker({
@@ -46,3 +41,16 @@
 
 
 });
+
+
+
+function InitClock()
+{
+    $(".timeline_time").text(new Date().toLocaleTimeString());
+
+    var timer = $.timer(1000, function () {
+
+        $(".timeline_time").text(new Date().toLocaleTimeString());
+    });
+
+}

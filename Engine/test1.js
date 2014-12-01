@@ -80,11 +80,15 @@ function Init()
 
         var obj = new Map();
 
-        
+        var id = 0;
 
         $.each(data, function (key, val) {
 
+            
+
             if (val.DateBgnPlan != null) {
+
+                id++;
 
                 var timeX = ((val.DateBgnPlan.match(/\d+/) - constTime) / 1000 / 60) * k;
 
@@ -104,20 +108,44 @@ function Init()
 
                     text: "",
 
-                    width: timeW + "px"
+                    width: timeW + "px",
+
+                    id: id + "_rect"
 
                 }).appendTo(containerHide);
 
                 $(".operation").draggable({ revert: true });
 
-                
+                $(".operation").mouseover(function () {
+                    
+                    $(".info").css("background-color", "white");
+                    //$(".info:hover").css("background-color", "yellow");
+
+                    $("#" + parseInt($(this).attr("id")) + "_info").css("background-color", "red");
+                    
+                });
+
+                $(".info").mouseover(function () {
+
+                    $(".info").css("background-color", "white");
+                    $(this).css("background-color", "yellow");
+
+                    $(".operation").css("background-color", "red");
+                    $("#" + parseInt($(this).attr("id")) + "_rect").css("background-color", "blue");
+
+                });
+
+
 
                 jQuery('<div/>', {
 
+                    id: id + "_info",
 
-                    text: val.Machine + " " + val.OrderNumber + " " + new Date(val.DateBgnPlan.match(/\d+/) * 1).toLocaleString()
+                    text: val.Machine + " " + val.OrderNumber + " " + new Date(val.DateBgnPlan.match(/\d+/) * 1).toLocaleString(),
 
-                }).appendTo('#info');
+                    class: "info"
+
+                }).appendTo('#info1');
 
 
             }
